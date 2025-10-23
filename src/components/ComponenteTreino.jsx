@@ -61,6 +61,33 @@ function ComponenteTreino(props) {
     //----------------------------------------------------------------------------------------
 
     //Lista de compras
+
+    const [valor, setValor] = React.useState('');
+    const [itens, setItens] = React.useState([]);
+
+    const onChangeInput = (ev) => {
+        setValor(ev.target.value);
+    }
+
+    const addItem = (ev) => {
+        setItens([...itens, valor]);
+        setValor('');
+        ev.preventDefault();
+    }
+    <div>
+        <h1>Lista de Compras</h1>
+        <input 
+            type="text" 
+            value={valor}
+            onChange={onChangeInput} 
+            placeholder="insira um item" />
+        <button onClick={addItem()}>Adicionar</button>
+        <ol>
+            {itens.map((item, index) => 
+                <li key={index}>{item}</li>
+            )}
+        </ol>
+    </div>
 }
 
 export default ComponenteTreino;
