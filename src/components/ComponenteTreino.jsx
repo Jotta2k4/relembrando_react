@@ -1,6 +1,6 @@
 import React from "react";
 
-function ComponenteTreino(props) {
+function ComponenteTreino() {
 
     //Verficador de imagens
 
